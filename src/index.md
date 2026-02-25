@@ -42,6 +42,37 @@ const matrixRows = d3
   )
   .flatMap(([fullName, byPlatform]) => byPlatform.map(([platform, timeMs]) => ({fullName, platform, timeMs})))
   .sort((a, b) => d3.descending(a.timeMs, b.timeMs));
+
+const commitTimelineRows = (runData.actions?.commits ?? [])
+  .flatMap((entry) => {
+    const commitDate = entry.commit?.authorDate ? new Date(entry.commit.authorDate) : null;
+    if (!commitDate || Number.isNaN(+commitDate)) return [];
+    return (entry.performance?.platforms ?? []).map((platformPerf) => ({
+      commitSha: entry.commit.sha,
+      commitShortSha: entry.commit.sha?.slice(0, 7),
+      commitDate,
+      platform: platformPerf.platform,
+      totalMs: platformPerf.totalMs,
+      tests: platformPerf.tests
+    }));
+  })
+  .sort((a, b) => d3.ascending(a.commitDate, b.commitDate));
+
+const commitAverageTimelineRows = d3
+  .rollups(
+    commitTimelineRows,
+    (rows) => ({
+      commitSha: rows[0].commitSha,
+      commitShortSha: rows[0].commitShortSha,
+      commitDate: rows[0].commitDate,
+      avgTotalMs: d3.mean(rows, (d) => d.totalMs),
+      maxTotalMs: d3.max(rows, (d) => d.totalMs),
+      platformCount: rows.length
+    }),
+    (d) => d.commitSha
+  )
+  .map(([, row]) => row)
+  .sort((a, b) => d3.ascending(a.commitDate, b.commitDate));
 ```
 
 <div class="grid grid-cols-4">
@@ -63,6 +94,57 @@ const matrixRows = d3
       <div class="big">${d.timeMs.toFixed(3)} ms</div>
     </div>`
   )}
+</div>
+
+<div class="grid grid-cols-1">
+  <div class="card">
+    ${commitTimelineRows.length > 0 ? resize((width) =>
+      Plot.plot({
+        title: "Performance timeline between commits",
+        subtitle: "Total gtest runtime by platform",
+        width,
+        height: 360,
+        x: {type: "time", label: "Commit date", grid: true},
+        y: {label: "Total time (ms)", grid: true},
+        color: {legend: true},
+        marks: [
+          Plot.lineY(commitTimelineRows, {x: "commitDate", y: "totalMs", stroke: "platform", tip: true}),
+          Plot.dot(commitTimelineRows, {
+            x: "commitDate",
+            y: "totalMs",
+            fill: "platform",
+            tip: true,
+            title: (d) => `${d.platform} • ${d.commitShortSha} • ${d.totalMs.toFixed(3)} ms`
+          })
+        ]
+      })
+    ) : html`<div class="muted">No commit timeline data available.</div>`}
+  </div>
+</div>
+
+<div class="grid grid-cols-1">
+  <div class="card">
+    ${commitAverageTimelineRows.length > 0 ? resize((width) =>
+      Plot.plot({
+        title: "Average runtime timeline",
+        subtitle: "Cross-platform mean gtest runtime per commit",
+        width,
+        height: 320,
+        x: {type: "time", label: "Commit date", grid: true},
+        y: {label: "Average time (ms)", grid: true},
+        marks: [
+          Plot.lineY(commitAverageTimelineRows, {x: "commitDate", y: "avgTotalMs", stroke: "var(--theme-foreground-focus)", tip: true}),
+          Plot.dot(commitAverageTimelineRows, {
+            x: "commitDate",
+            y: "avgTotalMs",
+            fill: "var(--theme-foreground-focus)",
+            tip: true,
+            title: (d) => `${d.commitShortSha} • avg ${d.avgTotalMs.toFixed(3)} ms • max ${d.maxTotalMs.toFixed(3)} ms`
+          })
+        ]
+      })
+    ) : html`<div class="muted">No average timeline data available.</div>`}
+  </div>
 </div>
 
 <div class="grid grid-cols-1">

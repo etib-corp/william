@@ -69,6 +69,29 @@ function extractRows(report, platform) {
   );
 }
 
+function summarizePerformanceByCommit(reportsByPlatform) {
+  const platforms = ["Linux", "Windows", "macOS"]
+    .filter((platform) => reportsByPlatform.has(platform))
+    .map((platform) => {
+      const report = reportsByPlatform.get(platform);
+      return {
+        platform,
+        totalMs: parseTimeToMilliseconds(report.time),
+        tests: report.tests ?? 0,
+        failures: report.failures ?? 0,
+        errors: report.errors ?? 0,
+        timestamp: report.timestamp ?? null
+      };
+    });
+
+  const totalMsValues = platforms.map((d) => d.totalMs);
+  return {
+    platforms,
+    meanTotalMs: totalMsValues.length ? totalMsValues.reduce((acc, value) => acc + value, 0) / totalMsValues.length : 0,
+    maxTotalMs: totalMsValues.length ? Math.max(...totalMsValues) : 0
+  };
+}
+
 async function readArtifactZipJson(owner, repo, artifactId) {
   const response = await octokit.request("GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}", {
     owner,
@@ -222,6 +245,7 @@ for (const repository of TARGET_REPOSITORIES) {
 
   for (const commit of candidateCommits) {
     const actionData = await fetchActionsForCommit(repository.owner, repository.repo, commit.sha);
+    const performance = summarizePerformanceByCommit(actionData.reportsByPlatform);
     actionsByCommit.push({
       commit: {
         sha: commit.sha,
@@ -232,7 +256,8 @@ for (const repository of TARGET_REPOSITORIES) {
       },
       runs: actionData.runs,
       selectedBuildRun: actionData.selectedBuildRun,
-      artifacts: actionData.artifacts
+      artifacts: actionData.artifacts,
+      performance
     });
 
     if (!selectedData && hasAllPlatforms(actionData.reportsByPlatform)) {
