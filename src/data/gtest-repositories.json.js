@@ -56,16 +56,29 @@ function detectPlatform(name) {
   return null;
 }
 
+function isPerformanceTest(suiteName, testName) {
+  const suite = String(suiteName ?? "").toLowerCase();
+  const test = String(testName ?? "").toLowerCase();
+  return (
+    suite.startsWith("performance") ||
+    suite.startsWith("testperformance") ||
+    test.startsWith("performance") ||
+    test.startsWith("testperformance")
+  );
+}
+
 function extractRows(report, platform) {
   return (report.testsuites ?? []).flatMap((suite) =>
-    (suite.testsuite ?? []).map((test) => ({
-      platform,
-      suite: suite.name,
-      test: test.name,
-      fullName: `${suite.name}.${test.name}`,
-      timeMs: parseTimeToMilliseconds(test.time),
-      status: test.result ?? "UNKNOWN"
-    }))
+    (suite.testsuite ?? [])
+      .filter((test) => isPerformanceTest(suite.name, test.name))
+      .map((test) => ({
+        platform,
+        suite: suite.name,
+        test: test.name,
+        fullName: `${suite.name}.${test.name}`,
+        timeMs: parseTimeToMilliseconds(test.time),
+        status: test.result ?? "UNKNOWN"
+      }))
   );
 }
 
@@ -74,12 +87,13 @@ function summarizePerformanceByCommit(reportsByPlatform) {
     .filter((platform) => reportsByPlatform.has(platform))
     .map((platform) => {
       const report = reportsByPlatform.get(platform);
+      const rows = extractRows(report, platform);
       return {
         platform,
-        totalMs: parseTimeToMilliseconds(report.time),
-        tests: report.tests ?? 0,
-        failures: report.failures ?? 0,
-        errors: report.errors ?? 0,
+        totalMs: rows.reduce((acc, row) => acc + row.timeMs, 0),
+        tests: rows.length,
+        failures: rows.filter((row) => row.status !== "COMPLETED").length,
+        errors: 0,
         timestamp: report.timestamp ?? null
       };
     });
@@ -316,19 +330,19 @@ if (missing.length) {
 }
 
 const raw = Object.fromEntries(expectedPlatforms.map((platform) => [platform, reportsByPlatform.get(platform)]));
+const tests = expectedPlatforms.flatMap((platform) => extractRows(reportsByPlatform.get(platform), platform));
 const summary = expectedPlatforms.map((platform) => {
   const report = reportsByPlatform.get(platform);
+  const rows = tests.filter((row) => row.platform === platform);
   return {
     platform,
-    tests: report.tests,
-    failures: report.failures,
-    errors: report.errors,
-    totalMs: parseTimeToMilliseconds(report.time),
+    tests: rows.length,
+    failures: rows.filter((row) => row.status !== "COMPLETED").length,
+    errors: 0,
+    totalMs: rows.reduce((acc, row) => acc + row.timeMs, 0),
     timestamp: report.timestamp
   };
 });
-
-const tests = expectedPlatforms.flatMap((platform) => extractRows(reportsByPlatform.get(platform), platform));
 
 process.stdout.write(
   `${JSON.stringify({
