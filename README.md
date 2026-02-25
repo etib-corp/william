@@ -24,6 +24,24 @@ npm run dev
 
 Visit <http://localhost:3000> to preview your app.
 
+## GitHub Actions data source
+
+The dashboard loader does the following automatically:
+
+1. Fetch all commits from `etib-corp/utility`
+2. Select commit `5e5e76cf451bccddaf1b38245b6085695b69f7fa`
+3. Fetch all Actions runs for that commit
+4. Pick the build run and collect artifact download URLs
+5. Download and parse artifact zip files to extract gtest JSON
+
+Set a token before `npm run dev` or `npm run build` to enable live fetch:
+
+```bash
+export GITHUB_TOKEN=<your_github_token>
+```
+
+The token needs access to read Actions artifacts for `etib-corp/utility`.
+
 For more, see the [Observable Framework documentation](https://observablehq.com/framework/getting-started).
 
 ## Project structure
