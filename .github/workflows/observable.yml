@@ -35,7 +35,7 @@ jobs:
         uses: actions/configure-pages@v5.0.0
 
       - name: Install dependencies
-        run: npm run install
+        run: npm install
 
       - name: Build the project
         run: npm run build
