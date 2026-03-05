@@ -1,0 +1,942 @@
+{
+  "tests": 55,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-02-27T06:13:41Z",
+  "time": "0.419s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "TestEvent",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "BaseClassIsPolymorphic",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_event.cpp",
+          "line": 29,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestEvent"
+        },
+        {
+          "name": "InheritFromEventConceptAcceptsDerivedTypes",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_event.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestEvent"
+        }
+      ]
+    },
+    {
+      "name": "TestKeyboardEvent",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "DefaultStateIsConsistent",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_keyboard_event.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestKeyboardEvent"
+        },
+        {
+          "name": "KeyCodeAndFlagsCanBeUpdated",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_keyboard_event.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestKeyboardEvent"
+        }
+      ]
+    },
+    {
+      "name": "TestMouseButtonEvent",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "DefaultStateHasZeroPositionAndNoPressedButtons",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_mouse_button_event.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestMouseButtonEvent"
+        },
+        {
+          "name": "PositionAndButtonStateCanBeChanged",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_mouse_button_event.cpp",
+          "line": 35,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestMouseButtonEvent"
+        }
+      ]
+    },
+    {
+      "name": "TestMouseMotionEvent",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "DefaultPositionIsOrigin",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_mouse_motion_event.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestMouseMotionEvent"
+        },
+        {
+          "name": "PositionCanBeUpdated",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_mouse_motion_event.cpp",
+          "line": 33,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestMouseMotionEvent"
+        }
+      ]
+    },
+    {
+      "name": "TestQuitEvent",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "IsDerivedFromEventAndConstructible",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/event\/test_quit_event.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestQuitEvent"
+        }
+      ]
+    },
+    {
+      "name": "TestFileLogger",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "CreatesAndOpensLogFile",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/logging\/test_file_logger.cpp",
+          "line": 29,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestFileLogger"
+        },
+        {
+          "name": "WritesMessagesToDisk",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/logging\/test_file_logger.cpp",
+          "line": 43,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestFileLogger"
+        }
+      ]
+    },
+    {
+      "name": "TestLoggable",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ProvidesUsableLoggerFromMixin",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/logging\/test_loggable.cpp",
+          "line": 41,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestLoggable"
+        }
+      ]
+    },
+    {
+      "name": "TestLogger",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "LevelToStringMapsKnownValues",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/logging\/test_logger.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestLogger"
+        },
+        {
+          "name": "FormatMessageIncludesNameLevelAndPayload",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/logging\/test_logger.cpp",
+          "line": 63,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestLogger"
+        }
+      ]
+    },
+    {
+      "name": "TestStandardLogger",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "InfoAndDebugGoToStdout",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/logging\/test_standard_logger.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestStandardLogger"
+        },
+        {
+          "name": "WarningAndErrorGoToStderr",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/logging\/test_standard_logger.cpp",
+          "line": 46,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestStandardLogger"
+        }
+      ]
+    },
+    {
+      "name": "TestCamera",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "DefaultConstructorInitializesExpectedValues",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_camera.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestCamera"
+        },
+        {
+          "name": "ConstructorValidationRejectsInvalidValues",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_camera.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestCamera"
+        },
+        {
+          "name": "ViewRayAtCenterAlignsWithForward",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_camera.cpp",
+          "line": 75,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestCamera"
+        },
+        {
+          "name": "MoveLookAtAndSetPerspectiveWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_camera.cpp",
+          "line": 90,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestCamera"
+        }
+      ]
+    },
+    {
+      "name": "TestColor",
+      "tests": 3,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ConstructorAndSettersClampValues",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_color.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestColor"
+        },
+        {
+          "name": "ArithmeticAndTransformationsWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_color.cpp",
+          "line": 40,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestColor"
+        },
+        {
+          "name": "LerpBlendAndNamedColorsWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_color.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestColor"
+        }
+      ]
+    },
+    {
+      "name": "TestParallelepiped",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "DefaultConstructorInitializesToZero",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_parallelepiped.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestParallelepiped"
+        },
+        {
+          "name": "SettersAndGettersWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_parallelepiped.cpp",
+          "line": 43,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestParallelepiped"
+        }
+      ]
+    },
+    {
+      "name": "TestRay",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "DefaultConstructorInitializesExpectedValues",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_ray.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestRay"
+        },
+        {
+          "name": "ZeroDirectionIsRejected",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_ray.cpp",
+          "line": 39,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestRay"
+        },
+        {
+          "name": "PointEvaluationAndNormalizationWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_ray.cpp",
+          "line": 49,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestRay"
+        },
+        {
+          "name": "TranslateAndTranslatedCopyWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_ray.cpp",
+          "line": 64,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestRay"
+        }
+      ]
+    },
+    {
+      "name": "TestRectangle",
+      "tests": 3,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ConstructionValidationAndBasicProperties",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_rectangle.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestRectangle"
+        },
+        {
+          "name": "ContainsIntersectsAndContainsRectangle",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_rectangle.cpp",
+          "line": 38,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestRectangle"
+        },
+        {
+          "name": "TranslateScaleAndScaledCopyWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_rectangle.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestRectangle"
+        }
+      ]
+    },
+    {
+      "name": "TestVector",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "DefaultConstructorInitializesToZero",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_vector.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestVector"
+        },
+        {
+          "name": "InitializerListSizeMismatchThrows",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_vector.cpp",
+          "line": 34,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestVector"
+        },
+        {
+          "name": "ArithmeticAndDotProductWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_vector.cpp",
+          "line": 38,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestVector"
+        },
+        {
+          "name": "NormalizeCrossAndDistanceWork",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/math\/test_vector.cpp",
+          "line": 61,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "TestVector"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceCamera",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0.003s",
+      "testsuite": [
+        {
+          "name": "ViewRayAndMovementOperationsCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_camera_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0.003s",
+          "classname": "PerformanceCamera",
+          "camera_view_ray_move_ops_ms": "3"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceColor",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0.004s",
+      "testsuite": [
+        {
+          "name": "TransformationsCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_color_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0.004s",
+          "classname": "PerformanceColor",
+          "color_operations_ms": "4"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceEvent",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "PolymorphicDispatchCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_event_performance.cpp",
+          "line": 9,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0s",
+          "classname": "PerformanceEvent",
+          "event_polymorphic_dispatch_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceFileLogger",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:41Z",
+      "time": "0.165s",
+      "testsuite": [
+        {
+          "name": "OpenAndMetadataChecksCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_file_logger_performance.cpp",
+          "line": 10,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:41Z",
+          "time": "0.165s",
+          "classname": "PerformanceFileLogger",
+          "file_logger_open_ms": "165"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceKeyboardEvent",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "StateUpdatesCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_keyboard_event_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceKeyboardEvent",
+          "keyboard_event_state_update_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceLoggable",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "LoggerAccessCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_loggable_performance.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceLoggable",
+          "loggable_logger_access_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceLogger",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0.23s",
+      "testsuite": [
+        {
+          "name": "MessageFormattingCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_logger_performance.cpp",
+          "line": 30,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0.23s",
+          "classname": "PerformanceLogger",
+          "logger_format_message_ms": "230"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceMouseButtonEvent",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "PositionAndButtonsCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_mouse_button_event_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceMouseButtonEvent",
+          "mouse_button_event_ops_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceMouseMotionEvent",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "PositionUpdatesCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_mouse_motion_event_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceMouseMotionEvent",
+          "mouse_motion_event_ops_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceParallelepiped",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "SetGetOperationsCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_parallelepiped_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceParallelepiped",
+          "parallelepiped_set_get_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "TestPerformance",
+      "tests": 2,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0.003s",
+      "testsuite": [
+        {
+          "name": "VectorArithmeticCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_performance.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "TestPerformance",
+          "vector_arithmetic_ms": "0"
+        },
+        {
+          "name": "ColorOperationsCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_performance.cpp",
+          "line": 54,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0.003s",
+          "classname": "TestPerformance",
+          "color_operations_ms": "3"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceQuitEvent",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ConstructionCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_quit_event_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceQuitEvent",
+          "quit_event_construction_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceRay",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "PointAndTranslationOperationsCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_ray_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceRay",
+          "ray_point_translate_ops_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceRectangle",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "GeometryOperationsCompleteWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_rectangle_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceRectangle",
+          "rectangle_geometry_ops_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceSingleton",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "GetInstanceCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_singleton_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceSingleton",
+          "singleton_get_instance_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceStandardLogger",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0.008s",
+      "testsuite": [
+        {
+          "name": "ConstructionCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_standard_logger_performance.cpp",
+          "line": 9,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0.008s",
+          "classname": "PerformanceStandardLogger",
+          "standard_logger_construction_ms": "8"
+        }
+      ]
+    },
+    {
+      "name": "PerformanceVector",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ArithmeticCompletesWithinBudget",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/performance\/test_vector_performance.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "PerformanceVector",
+          "vector_arithmetic_ms": "0"
+        }
+      ]
+    },
+    {
+      "name": "TestSingleton",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-02-27T06:13:42Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ReturnsSameInstanceAndPersistsState",
+          "file": "\/Users\/runner\/work\/utility\/utility\/tests\/sources\/test_singleton.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-02-27T06:13:42Z",
+          "time": "0s",
+          "classname": "TestSingleton"
+        }
+      ]
+    }
+  ]
+}
