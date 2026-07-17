@@ -14,10 +14,10 @@ const rand = mulberry32(20240622);
 
 // C++ library baseline characteristics.
 const libraries = [
-  {name: "fmt", baseBinary: 120, baseCompile: 180, baseRuntime: 12, baseDeps: 0, baseDownloads: 5.2, baseIssues: 320, baseStars: 19.8, baseCoverage: 93, baseMemory: 8, baseBuild: 2400},
-  {name: "spdlog", baseBinary: 280, baseCompile: 350, baseRuntime: 18, baseDeps: 1, baseDownloads: 3.8, baseIssues: 450, baseStars: 15.2, baseCoverage: 89, baseMemory: 14, baseBuild: 4100},
-  {name: "abseil", baseBinary: 1850, baseCompile: 2600, baseRuntime: 45, baseDeps: 0, baseDownloads: 2.1, baseIssues: 980, baseStars: 14.7, baseCoverage: 91, baseMemory: 42, baseBuild: 12800},
-  {name: "boost", baseBinary: 6400, baseCompile: 8200, baseRuntime: 110, baseDeps: 4, baseDownloads: 1.6, baseIssues: 760, baseStars: 13.9, baseCoverage: 88, baseMemory: 78, baseBuild: 34200}
+  {name: "xider", baseBinary: 120, baseCompile: 180, baseRuntime: 12, baseDeps: 0, baseDownloads: 5.2, baseIssues: 320, baseStars: 19.8, baseCoverage: 93, baseMemory: 8, baseBuild: 2400},
+  {name: "guillaume", baseBinary: 280, baseCompile: 350, baseRuntime: 18, baseDeps: 1, baseDownloads: 3.8, baseIssues: 450, baseStars: 15.2, baseCoverage: 89, baseMemory: 14, baseBuild: 4100},
+  {name: "evan", baseBinary: 1850, baseCompile: 2600, baseRuntime: 45, baseDeps: 0, baseDownloads: 2.1, baseIssues: 980, baseStars: 14.7, baseCoverage: 91, baseMemory: 42, baseBuild: 12800},
+  {name: "utility", baseBinary: 6400, baseCompile: 8200, baseRuntime: 110, baseDeps: 4, baseDownloads: 1.6, baseIssues: 760, baseStars: 13.9, baseCoverage: 88, baseMemory: 78, baseBuild: 34200}
 ];
 
 const months = [];
@@ -29,24 +29,14 @@ for (let year = 2022; year <= 2024; year++) {
 
 // Per-library starting major.minor versions for realistic mock data.
 const baseVersions = {
-  fmt: [8, 0],
-  spdlog: [1, 9],
-  abseil: [2021, 0],
-  boost: [1, 78]
+  xider: [0, 1],
+  guillaume: [0, 1],
+  evan: [0, 2],
+  utility: [0, 1]
 };
 
 function versionFor(lib, monthIndex) {
   const [maj, min] = baseVersions[lib];
-  if (lib === "abseil") {
-    // Abseil uses yearly release numbers (e.g. 202101, 202102, ...).
-    const year = 2021 + Math.floor(monthIndex / 12);
-    const month = (monthIndex % 12) + 1;
-    return `${year}${String(month).padStart(2, "0")}`;
-  }
-  if (lib === "boost") {
-    // Boost uses major.minor (e.g. 1.78.0, 1.79.0, ...).
-    return `${maj}.${min + monthIndex}.0`;
-  }
   return `${maj}.${min}.${monthIndex}`;
 }
 
