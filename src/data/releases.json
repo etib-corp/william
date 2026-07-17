@@ -2,5 +2,5 @@
   {"library": "xider", "version": "0.0.1", "date": "2026-07-15", "milestone": "First application release", "y": 10},
   {"library": "guillaume", "version": "0.1.9", "date": "2026-07-10", "milestone": "First framework release", "y": 25},
   {"library": "evan", "version": "0.2.4", "date": "2026-07-9", "milestone": "Second engine release", "y": 40},
-  {"library": "utility", "version": "0.1.0", "date": "2026-07-12", "milestone": "First library release", "y": 55},
+  {"library": "utility", "version": "0.1.0", "date": "2026-07-12", "milestone": "First library release", "y": 55}
 ]
