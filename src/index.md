@@ -34,7 +34,7 @@ const topLibrary = latest.reduce((a, b) => (a.conanDownloads > b.conanDownloads 
 
 <!-- KPI cards -->
 
-<div class="grid grid-cols-4">
+<div class="grid grid-cols-3">
   <div class="card">
     <h2>Libraries tracked</h2>
     <span class="big">${totalLibraries}</span>
@@ -46,11 +46,6 @@ const topLibrary = latest.reduce((a, b) => (a.conanDownloads > b.conanDownloads 
   <div class="card">
     <h2>Average test coverage</h2>
     <span class="big">${avgCoverage.toFixed(1)}%</span>
-  </div>
-  <div class="card">
-    <h2>Top by Conan downloads</h2>
-    <span class="big">${topLibrary.library}</span>
-    <span class="muted">${topLibrary.conanDownloads.toFixed(2)}M / month</span>
   </div>
 </div>
 
