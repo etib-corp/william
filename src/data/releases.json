@@ -1,9 +1,6 @@
 [
-  {"library": "fmt", "version": "8.0.0", "date": "2022-01-15", "milestone": "Initial tracking", "y": 10},
-  {"library": "spdlog", "version": "1.9.0", "date": "2022-04-22", "milestone": "Compile-time format string checks", "y": 25},
-  {"library": "abseil", "version": "20210324.1", "date": "2022-09-07", "milestone": "LTS branch added", "y": 40},
-  {"library": "boost", "version": "1.78.0", "date": "2023-02-14", "milestone": "Modular build improvements", "y": 55},
-  {"library": "fmt", "version": "9.0.0", "date": "2023-06-30", "milestone": "Significant compile-time speedup", "y": 70},
-  {"library": "spdlog", "version": "1.12.0", "date": "2023-11-12", "milestone": "Binary size reduction", "y": 30},
-  {"library": "abseil", "version": "20240116.0", "date": "2024-03-05", "milestone": "C++14 baseline migration", "y": 85}
+  {"library": "xider", "version": "0.0.1", "date": "2026-07-15", "milestone": "First application release", "y": 10},
+  {"library": "guillaume", "version": "0.1.9", "date": "2026-07-10", "milestone": "First framework release", "y": 25},
+  {"library": "evan", "version": "0.2.4", "date": "2026-07-9", "milestone": "Second engine release", "y": 40},
+  {"library": "utility", "version": "0.1.0", "date": "2026-07-12", "milestone": "First library release", "y": 55},
 ]
